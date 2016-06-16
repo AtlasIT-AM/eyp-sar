@@ -22,28 +22,39 @@ Installs the sar package.
 ### What sar affects
 
 * Installs sar
-* In Ubuntu 14 controlls /etc/default/sysstat content, it will overwritten.
+* Manages system's configuration file:
+  * Debian based: **/etc/default/sysstat**
+  * RH based: **/etc/sysconfig/sysstat**
 
 ### Beginning with sar
 
-Example of the standard configuration:
+Standard configuration:
+
 ```puppet
-class sar {
-  ensure  => 'installed',
-  enabled => true,
-}
+class { 'sar': }
 ```
 
 ## Usage
 
-* ensure: set if the sar package will be installed or removed.
-* enable: set if sar is enabled or disabled.
-* history: how long to keep log files (in days)
+change default retention:
+
+```puppet
+class { 'sar':
+  history => '7',
+}
+```
+
 
 ## Reference
 
-Classes:
-* sar: main class, install the module and configure it.
+### classes
+
+#### sar
+
+main class, install the module and configure it
+* **ensure**: set if the sar package will be installed or removed (default: installed)
+* **enable**: set if sar is enabled or disabled (default: true)
+* **history**: how many days log files will be kept (default: 60)
 
 ## Limitations
 

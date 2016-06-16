@@ -38,6 +38,27 @@ class sar::params {
         default: { fail('Unsupported Debian flavour!')  }
       }
     }
+    'Suse':
+    {
+      case $::operatingsystem
+      {
+        'SLES':
+        {
+          case $::operatingsystemrelease
+          {
+            '11.3':
+            {
+              $packages=[ 'sysstat' ]
+              $enablefile_debian=undef
+              $sysstat_conf='/etc/sysstat/sysstat'
+              $sysstat_template="${module_name}/rh/sysstat.erb"
+            }
+            default: { fail("Unsupported operating system ${::operatingsystem} ${::operatingsystemrelease}") }
+          }
+        }
+        default: { fail("Unsupported operating system ${::operatingsystem}") }
+      }
+    }
     default: { fail('Unsupported OS!')  }
   }
 }

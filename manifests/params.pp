@@ -24,7 +24,7 @@ class sar::params {
         {
           case $::operatingsystemrelease
           {
-            /^14.*$/:
+            /^1[46].*$/:
             {
               $packages=[ 'sysstat' ]
               $enablefile_debian='/etc/default/sysstat'

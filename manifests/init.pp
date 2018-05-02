@@ -1,7 +1,11 @@
 class sar (
-            $ensure  = 'installed',
-            $enabled = true,
-            $history = '30',
+            $ensure         = 'installed',
+            $enabled        = true,
+            $history        = '30',
+            $sadc_options   = $sar::params::sadc_options_default,
+            $sa_dir         = $sar::params::sa_dir_default,
+            $compress_after = $sar::params::compress_after_default,
+            $compress       = $sar::params::compress_default,
           ) inherits sar::params{
 
   package { $sar::params::packages:
@@ -25,7 +29,7 @@ class sar (
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => template($sar::params::sysstat_template),
+    content => template("${module_name}/sysstat.erb"),
     require => Package[$sar::params::packages],
   }
 

@@ -1,14 +1,14 @@
 {
   "name": "eyp-sar",
-  "version": "0.1.5",
+  "version": "0.2.1",
   "author": "eyp",
-  "summary": "ensures sar is installed and enabled",
+  "summary": "sar management",
   "license": "Apache-2.0",
-  "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "source": "https://github.com/NTTCom-MS/eyp-sar",
+  "project_page": "https://github.com/NTTCom-MS/eyp-sar",
+  "issues_url": "https://github.com/NTTCom-MS/eyp-sar/issues",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"}
   ],
   "operatingsystem_support": [
     {
@@ -33,11 +33,17 @@
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [ "14.04", "16.04" ]
+      "operatingsystemrelease": [ "14.04", "16.04", "18.04" ]
     },
     {
       "operatingsystem": "SLES",
       "operatingsystemrelease": [ "11.3" ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.8.0"
     }
   ]
 }

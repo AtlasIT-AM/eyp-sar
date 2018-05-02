@@ -1,4 +1,3 @@
-# sysstat configuration file. See sysstat(5) manual page.
 # puppet managed file
 
 # How long to keep log files (in days).
@@ -7,11 +6,23 @@
 # multiple directories, one for each month.
 HISTORY=<%= @history %>
 
-# Compress (using gzip or bzip2) sa and sar files older than (in days):
-COMPRESSAFTER=10
-
 # Parameters for the system activity data collector (see sadc(8) manual page)
 # which are used for the generation of log files.
 # By default contains the `-S DISK' option responsible for generating disk
 # statisitcs. Use `-S XALL' to collect all available statistics.
-SADC_OPTIONS="-S DISK"
+SADC_OPTIONS="<%= @sadc_options %>"
+
+<% if defined?(@compress_after) -%>
+# Compress (using gzip or bzip2) sa and sar files older than (in days):
+COMPRESSAFTER=<%= @compress_after %>
+<% end -%>
+
+<% if defined?(@sa_dir) -%>
+# Directory where sa and sar files are saved. The directory must exist.
+SA_DIR=<%= @sa_dir %>
+<% end -%>
+
+<% if defined?(@compress) -%>
+# Compression program to use.
+ZIP="<%= @compress %>"
+<% end -%>

@@ -61,19 +61,27 @@ class sar::params {
     {
       $sa_dir_default=undef
       $compress_default=undef
-      $compress_after_default=undef
       case $::operatingsystem
       {
         'SLES':
         {
           case $::operatingsystemrelease
           {
-            '11.3':
+            /^11.3$/:
             {
               $packages=[ 'sysstat' ]
               $enablefile_debian=undef
               $sysstat_conf='/etc/sysstat/sysstat'
               $sadc_options_default=undef
+              $compress_after_default=undef
+            }
+            /^12.3$/:
+            {
+              $packages=[ 'sysstat' ]
+              $enablefile_debian=undef
+              $sysstat_conf='/etc/sysstat/sysstat'
+              $sadc_options_default=undef
+              $compress_after_default='10'
             }
             default: { fail("Unsupported operating system ${::operatingsystem} ${::operatingsystemrelease}") }
           }

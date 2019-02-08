@@ -75,7 +75,7 @@ class sar::params {
               $sadc_options_default=undef
               $compress_after_default=undef
             }
-            /^12.3$/:
+            /^12.[34]$/:
             {
               $packages=[ 'sysstat' ]
               $enablefile_debian=undef

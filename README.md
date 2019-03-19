@@ -54,7 +54,11 @@ class { 'sar':
 main class, install the module and configure it
 * **ensure**: set if the sar package will be installed or removed (default: installed)
 * **enable**: set if sar is enabled or disabled (default: true)
-* **history**: how many days log files will be kept (default: 60)
+* **history**: how many days log files will be kept (default: 30)
+* **sadc_options**: (default: distro default)
+* **sa_dir**: (default: distro default)
+* **compress_after**: (default: distro default)
+* **compress**: (default: distro default)
 
 ## Limitations
 

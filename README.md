@@ -10,8 +10,9 @@
     * [Beginning with sar](#beginning-with-sar)
 4. [Usage](#usage)
 5. [Reference](#reference)
-5. [Limitations](#limitations)
 6. [Development](#development)
+    * [TODO](#todo)
+    * [Contributing](#contributing)
 
 ## Overview
 
@@ -60,8 +61,23 @@ main class, install the module and configure it
 * **compress_after**: (default: distro default)
 * **compress**: (default: distro default)
 
-## Limitations
+## Development
 
-* Redhat and derivatives: releases 5, 6 and 7.
-* Ubuntu: 14
-* Other: Not supported.
+We are pushing to have acceptance testing in place, so any new feature should
+have some tests to check both presence and absence of any feature
+
+### TODO
+
+* Add more postgres versions
+* tablespaces management
+* Rewrite class relationships
+* Improve default config: https://github.com/le0pard/pgtune/blob/master/webpack/selectors/configuration.jsç
+* Move **postgresql::hba_rule** to **postgresql::hba** namespace
+
+### Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request

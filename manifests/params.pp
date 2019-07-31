@@ -18,7 +18,7 @@ class sar::params {
         }
         /^6.*$/:
         {
-          $sadc_options_default='-d'
+          $sadc_options_default='-S DISK'
         }
         /^7.*$/:
         {

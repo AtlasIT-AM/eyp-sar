@@ -1,9 +1,13 @@
 # CHANGELOG
 
+## 0.2.4
+
+* update SADC options for RHEL 6
+
 ## 0.2.3
 
 * SLES 12.4 support
-*
+
 ## 0.2.2
 
 * SLES 12.3 support

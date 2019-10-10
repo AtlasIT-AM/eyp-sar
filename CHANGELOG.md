@@ -1,20 +1,24 @@
 # CHANGELOG
 
+## 0.2.5
+
+* Added support for **RHEL 8**
+
 ## 0.2.4
 
-* update SADC options for RHEL 6
+* update SADC options for **RHEL 6**
 
 ## 0.2.3
 
-* SLES 12.4 support
+* Added support for **SLES 12.4**
 
 ## 0.2.2
 
-* SLES 12.3 support
+* Added **SLES 12.3** support
 
 ## 0.2.1
 
-* added support for Ubuntu 18.04
+* added support for **Ubuntu 18.04**
 * unified template
 
 ## 0.2.0
@@ -26,4 +30,4 @@
 
 ## 0.1.6
 
-* added **SADC_OPTIONS** for RH
+* added **SADC_OPTIONS** for RH based distributions

@@ -16,11 +16,7 @@ class sar::params {
         {
           $sadc_options_default=undef
         }
-        /^6.*$/:
-        {
-          $sadc_options_default='-S DISK'
-        }
-        /^7.*$/:
+        /^[6-8].*$/:
         {
           $sadc_options_default='-S DISK'
         }
@@ -53,7 +49,7 @@ class sar::params {
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
         }
-        'Debian': { fail('Unsupported')  }
+        'Debian': { fail("Currently unsupported: Debian ${::operatingsystemrelease}")  }
         default: { fail('Unsupported Debian flavour!')  }
       }
     }
